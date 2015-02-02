@@ -1,0 +1,8 @@
+h1 Posts from a Jet Pilot
+
+.posts
+  - @posts.each do |post|
+    blockquote
+      a href='/posts/#{post.date}-#{post.slug}.md'
+        h3 #{post.title}
+        small #{post.date}
