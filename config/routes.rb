@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'uploads/propose'
+
+  post 'uploads/upload'
+
   get 'posts/index'
 
   get 'posts/show'
