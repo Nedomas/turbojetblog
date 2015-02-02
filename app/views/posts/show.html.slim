@@ -1,5 +1,9 @@
 nav
   p = link_to 'All posts', root_path
 
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+header
+  h1 = @post.title
+  small = @post.date
+
+.content
+  = @post.content

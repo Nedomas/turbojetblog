@@ -18,11 +18,11 @@ class PostsController < ApplicationController
     filename = Pathname.new(path).basename.to_s
     _, dashed_date, dashed_title = filename.match(/(\d{4}-\d{2}-\d{2})-(.*).md/).to_a
 
-    OpenStruct.new(
+    Post.new(
       title: dashed_title.titleize,
       slug: dashed_title,
       date: dashed_date,
-      markdown: -> { File.new(path).read },
+      path: path,
     )
   end
 end
