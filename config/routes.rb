@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
+  root 'posts#index'
+  get 'posts/:slug' => 'posts#show'
+
   get 'uploads/propose'
-
   post 'uploads/upload'
-
-  get 'posts/index'
-
-  get 'posts/show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
