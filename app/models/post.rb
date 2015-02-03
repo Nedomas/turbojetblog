@@ -5,7 +5,19 @@ class Post
     @title = title
     @slug = slug
     @date = date
-    @path = path
+    @path = Pathname.new(path).relative_path_from(Rails.root).to_s
+  end
+
+  def self.new_from_path(path)
+    filename = Pathname.new(path).basename.to_s
+    _, dashed_date, dashed_title = filename.match(/(\d{4}-\d{2}-\d{2})-(.*).md/).to_a
+
+    new(
+      title: dashed_title.titleize,
+      slug: dashed_title,
+      date: dashed_date,
+      path: path,
+    )
   end
 
   def markdown

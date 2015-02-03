@@ -33,6 +33,8 @@ gem 'carrierwave'
 gem 'rails_12factor'
 gem 'pg', group: :production
 gem 'redcarpet'
+gem 'github_api'
+gem 'memoist'
 
 group :development, :test do
   gem 'sqlite3'
