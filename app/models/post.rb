@@ -5,7 +5,9 @@ class Post
     @title = title
     @slug = slug
     @date = date
-    @path = Pathname.new(path).relative_path_from(Rails.root).to_s
+    @path = path
+
+    clean_path!
   end
 
   def self.new_from_path(path)
@@ -32,5 +34,10 @@ class Post
 
   def renderer
     Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true)
+  end
+
+  def clean_path!
+    @path = Pathname.new(Rails.root.join(@path))
+      .relative_path_from(Rails.root).to_s
   end
 end
