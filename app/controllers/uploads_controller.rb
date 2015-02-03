@@ -39,7 +39,7 @@ class UploadsController < ApplicationController
       post.path,
       path: post.path,
       message: "Update post: #{post.title}",
-      content: post.content,
+      content: post.markdown,
       sha: existing_file.sha,
     )
   end

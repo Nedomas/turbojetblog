@@ -1,1 +1,1 @@
-<p>Github from Heroku</p>
+Github from Heroku
