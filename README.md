@@ -21,8 +21,8 @@ GH_USERNAME=yourusername GH_PASSWORD=yourpassword GH_REPO=yourblogrepo rails s
 #### On heroku
 To top it off, you can set up a free Codeship CI as Heroku addon. 
 It will then redeploy your app once the new file is in Github. 
-Since give you a temporary filesystem - the uploads would be gone after the server is restarted
-When restarted, it clones the last deploy, not the last commit of the repo.
+Since heroku gives you a temporary filesystem - the uploads would be gone after the server is restarted.
+Because in the case of restart, heroku clones the last deploy, not the last commit of the repo.
 
 To set up Codeship, use:
 ```bash
