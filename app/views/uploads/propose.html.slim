@@ -1,6 +1,12 @@
-h1 Add new content
+h1 Add or update content
 p Upload a post by dragging you markdown onto the upload button
+p Name of the file should follow YYYY-MM-DD-dashed-title.md
 
 = form_tag 'uploads/upload', multipart: true
   = file_field_tag :post
   = submit_tag 'Upload this awesome thing'
+
+p
+  | If you don't have a markdown file,
+  |  save #{link_to 'this file', 'raw_posts/2015-02-01-first-blog-post.md'}
+  |  and drag it on.
