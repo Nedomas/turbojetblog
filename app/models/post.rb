@@ -30,6 +30,10 @@ class Post
     renderer.render(markdown).html_safe
   end
 
+  def existing_sha
+    GithubAgent.find(path).sha
+  end
+
   private
 
   def renderer
