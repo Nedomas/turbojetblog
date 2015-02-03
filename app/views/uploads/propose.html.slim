@@ -1,6 +1,6 @@
 h1 Add new content
 p Upload a post by dragging you markdown onto the upload button
 
-= form_tag 'upload', multipart: true
+= form_tag 'uploads/upload', multipart: true
   = file_field_tag :post
   = submit_tag 'Upload this awesome thing'
